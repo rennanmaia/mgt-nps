@@ -1,0 +1,50 @@
+
+.details-base-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.details-id, 
+.details-customer, 
+.created-date, 
+.answered-date, 
+.details-question, 
+.details-score,
+.details-link,
+.details-trigger {
+    padding: 5px;
+    width: 100%;
+}
+
+.created-date, .answered-date {
+    width: 50%;
+}
+
+.details-question {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details-score {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.details-customer {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details-link {
+    text-align: center;
+}
+
+.details-link button {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+}

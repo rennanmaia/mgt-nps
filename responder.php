@@ -1,3 +1,22 @@
+<?php
+
+include_once('config.php');
+include_once('classes/clientes.class.php');
+include_once('classes/gatilhos.class.php');
+include_once('classes/perguntas.class.php');
+include_once('classes/nps.class.php');
+
+if (isset($_GET['link'])) {
+
+    $link = $_GET['link'];
+
+    $nps = new Nps(0, "");
+    $nps_dados = $nps->pesquisar("mgt_nps.codigo_link", "=", $link, "mgt_nps.id");
+    
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +39,7 @@
         Em uma escala de 0 a 10, você indicaria essa empresa para um familiar ou amigo?
     </div>
     
-    <div class="nps-list">
+    <div class="nps-scores">
        <div class="detractor" id="1">1</div>
        <div class="detractor" id="2">2</div>
        <div class="detractor" id="3">3</div>
@@ -33,7 +52,8 @@
        <div class="promoter" id="10">10</div>
     </div>
     
-    <form>
+    <form class="form_resposta" action="agradecimento.php" method="POST">
+        <input type="hidden" name="link" id="link" placeholder="Link" value="<?= $link ?>">
         <input type="hidden" name="nps" id="nps" placeholder="NPS" value="0">
         <button class="send-button">Enviar</button>
     </form>

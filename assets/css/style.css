@@ -1,10 +1,20 @@
-body {
-    text-align: center;
-    background-color: aliceblue;
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;    
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* Topo */
 header {
     margin-top: 20px;
+    text-align: center;
 }
 
 #logo {
@@ -13,22 +23,96 @@ header {
 
 header h1 {
     font-size: 14px;
-    font-weight: 100;
-    margin: 0;
+    font-weight: 400;
 }
 
-main {
-    max-width: 500px;
+header h2 {
+    font-weight: 800;
+}
+/* Topo - FIM */
+
+/* Menu */
+.menu {
+    width: 100%;
+    margin-top: 20px;
+
+    background-color: darkblue;
+    color: white;
+}
+
+.menu ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    list-style: none;
+    padding: 10px;
+}
+
+.menu ul li a, .menu ul li a i {
+    color: white;
+}
+/* Menu - FIM */
+
+/* Search Bar */
+.search-bar {
+    width: 100%;
+    padding: 10px;
+}
+
+.search-bar-input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.search-bar-inputs {
+    width: 80%;
+}
+
+.search-bar-button-container {
+    width: 18%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.search-bar-button {
+    background-color: #accf38;
+    border-radius: 5px;
+    border: 1px solid darkgreen;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    width: 120px;
+    font-weight: 700;
+    font-size: 18px;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px;
 }
 
-.question {
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 700;
+.search-bar-period {
+    display: inline;
 }
+
+/* Search Bar - FIM */
+
+/* Main Page */
+main {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+main h1 {
+    text-align: center;
+    font-weight: bold;
+}
+/* Main Page - FIM */
 
 .active-color-detractor {
     background-color: rgb(244, 151, 151);
@@ -42,7 +126,7 @@ main {
     background-color: rgb(57, 229, 57);
 }
 
-.nps-list .detractor, .nps-list .passive, .nps-list .promoter {
+.nps-scores .detractor, .nps-scores .passive, .nps-scores .promoter {
     font-size: 16px;
     display:flex;
     padding: 10px;
@@ -54,26 +138,43 @@ main {
     font-weight: 500;
     display: inline-block;
     border: 3px solid gray;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
 
-.nps-list .detractor:hover {
+.nps-scores {
+    text-align: center;
+}
+
+.nps-scores .detractor:hover {
     background-color: red;
     color: white;
 }
 
-.nps-list .passive:hover {
+.nps-scores .passive:hover {
     background-color: orange;
 }
 
-.nps-list .promoter:hover {
+.nps-scores .promoter:hover {
     background-color: green;
     color: white;
 }
 
-form {
+.form_resposta {
     text-align: center;
+}
+
+.form-cliente {
+    width: 100%;
+}
+
+.new-customer, .new-trigger {
+    padding: 10px;
+}
+
+.search-customer-name {
+    padding: 5px;
+    height: 25px;
 }
 
 .send-button {
@@ -90,4 +191,67 @@ form {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    border-top: 1px solid gray;
+}
+
+
+.question {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.form-novo-nps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-novo-nps fieldset {
+    border: 0 none;
+    padding: 10px;
+    display: flex;
+}
+
+.form-novo-nps label {
+    display: block;
+    width: 100px;
+}
+
+
+
+@media only screen and ( max-width: 600px ) {
+    .nps-created {
+        display: none;
+    }
+
+    .nps-answered {
+        display: none;
+    }
+
+    .search-bar-period {
+        display: block;
+    }
+
+    .search-bar {
+        text-align: center;
+    }
+
+    .search-bar-inputs {
+        width: 100%;
+    }
+    
+    .search-bar-button-container {
+        width: 100%;
+    }
+
+
+    
 }
